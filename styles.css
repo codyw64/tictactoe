@@ -27,3 +27,11 @@ body {
 #square0, #square1, #square2, #square3, #square4, #square5 {
     border-bottom: 0;
 }
+
+p {
+    margin: 5px;
+}
+
+#playerShower {
+    margin: 5px;
+}
