@@ -20,13 +20,21 @@ body {
     border-width: 1px;
 }
 
-#square0, #square1, #square3, #square4, #square6, #square7 {
+#square00, #square20, #square10 {
     border-right: 0;
 }
-
-#square0, #square1, #square2, #square3, #square4, #square5 {
+#square02, #square00, #square01 {
     border-bottom: 0;
 }
+
+#square20, #square22, #square21 {
+    border-top: 0;
+}
+#square22, #square02, #square12 {
+    border-left: 0;
+}
+
+
 
 p {
     margin: 5px;
