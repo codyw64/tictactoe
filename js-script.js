@@ -42,17 +42,35 @@ const gameBoard = (() => {
                 player1.playing = true;
                 player2.playing = false;
             }
-            
+            if (displayController.gameOver() == "game over") {
+                return;
+            }
         });
         board.appendChild(square);
     }
-
-    return;
+    return; 
 })();
 
 const displayController = (() => {
-    
+    function gameOver() {
+        let board = document.getElementById("GB").childNodes;
+        if (((board[0].textContent == board[1].textContent && board[1].textContent == board[2].textContent) && board[0].textContent != "")
+        || ((board[0].textContent == board[4].textContent && board[4].textContent == board[8].textContent)  && board[0].textContent != "")
+        || ((board[0].textContent == board[3].textContent && board[3].textContent == board[6].textContent)  && board[0].textContent != "")
+        || ((board[1].textContent == board[4].textContent && board[4].textContent == board[7].textContent) && board[1].textContent != "")
+        || ((board[2].textContent == board[5].textContent && board[5].textContent == board[8].textContent) && board[2].textContent != "")
+        || ((board[3].textContent == board[4].textContent && board[4].textContent == board[5].textContent) && board[3].textContent != "")
+        || ((board[6].textContent == board[7].textContent && board[7].textContent == board[8].textContent) && board[6].textContent != "")
+        || ((board[6].textContent == board[4].textContent && board[4].textContent == board[2].textContent) && board[6].textContent != "")) {
+            if (player2.playing) {
+                console.log(player1.name + " has won!");
+            } else if (player1.playing) {
+                console.log(player2.name + " has won!");
+            }
+            return "game over";
+        }
+    }
 
-    return;
+    return {gameOver};
 })();
 
